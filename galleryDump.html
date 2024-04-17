@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <header>
+    <h2 class="logo">Malcolm</h2>
+    <nav class="navigation">
+      <a href="Home.html">Home</a>
+      <a href="aboutus.html">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+      <button class="btnlogin-popup" onclick="location.href='#'" >Book</button>
+    </nav>
+</header>
+<div class="fullImg" id="fullImgbox">
+    <img src="Photos/img1.jpg" alt="photo" id="fullImgs">
+    <span onclick="closefullImgs()">X</span>
+</div>
+    <div class="imgGal">
+        <img src="Photos/img1.jpg" alt="photo" onclick="openfullImgs(this.src)">
+        <img src="Photos/img2.jpg" alt="photo" onclick="openfullImgs(this.src)">
+        <img src="Photos/img3.jpg" alt="photo" onclick="openfullImgs(this.src)">
+        <img src="Photos/img4.jpg" alt="photo" onclick="openfullImgs(this.src)">
+        <img src="Photos/img5.jpg" alt="photo" onclick="openfullImgs(this.src)">
+        <img src="Photos/img6.jpg" alt="photo" onclick="openfullImgs(this.src)">
+        <img src="Photos/img7.jpg" alt="photo" onclick="openfullImgs(this.src)">
+        <img src="Photos/11.jpg" alt="photo" onclick="openfullImgs(this.src)">
+        <img src="Photos/10.jpg" alt="photo" onclick="openfullImgs(this.src)">
+        <img src="Photos/img8.jpg" alt="photo" onclick="openfullImgs(this.src)">
+        <img src="Photos/img13.jpg" alt="photo" onclick="openfullImgs(this.src)"> 
+        <img src="Photos/img9.jpg" alt="photo" onclick="openfullImgs(this.src)">
+    </div>
+
+    <script>
+        var fullImgbox = document.getElementById("fullImgbox");
+        var fullImgs = document.getElementById("fullImgs");
+
+        function openfullImgs(pic){
+            fullImgbox.style.display="flex";
+            fullImgs.src=pic;
+        }
+
+        function closefullImgs(){
+            fullImgbox.style.display="none";
+        }
+    </script>
+
+</body>
+</html>

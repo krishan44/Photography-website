@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+    <header>
+        <h2 class="logo">Malcolm</h2>
+        <nav class="navigation">
+          <a href="Home.html">Home</a>
+          <a href="aboutus.html">About</a>
+          <a href="Services.html">Services</a>
+          <a href="contact.html">Contact</a>
+          <button class="btnlogin-popup" onclick="location.href='booking.html'" >Book</button>
+        </nav>
+    </header>
+    <div class="form">
+        <div class="form-text">
+            <h1><span><img src="art-1.png" alt=""></span>Book Now <span><img src="art-1.png" alt=""></span></h1>
+            <p>Don't Missed a chance to capture the Moments</p>
+        </div>
+        <div class="main-form">
+            <form action="booking.php" method="post">
+                <div>
+                    <span>Full name </span>
+                    <input type="text" name="name" id="name" placeholder="Mr.Saman Kumar" required>
+                </div>
+                <div>
+                    <span>Email address</span>
+                    <input type="email" name="email" id="email" placeholder="example@gmail.com" required> 
+                </div>
+                <div>
+                    <span>Service</span>
+                    <select name="Service" id="service" required>
+                        <option value=""><---Service---></option>
+                        <option value="Wedding Shoot">Wedding Shoot</option>
+                        <option value="Preshoot">Preshoot</option>
+                        <option value="Birthday Party">Birthday Party</option>
+                        <option value="Event">Event</option>
+                        <option value="Event">Baby Reveals</option>
+                        <option value="Event">Else</option>
+                    </select>
+                </div>
+                <div>
+                    <span>Location</span>
+                    <input type="text" name="location" id="location" placeholder="ex: Colarado,Usa" required>
+                </div>
+                <div>
+                    <span>Date </span>
+                    <input type="date" name="date" id="date" placeholder="date" required>
+                </div>
+                <div>
+                    <span>Contact Number</span>
+                    <input type="number" name="number" id="number" placeholder="ex: 1232-2131-112" required>
+                </div>
+                <div id="submit">
+                    <button class="submitBtn" onclick="message()">
+                        Submit
+                        <svg fill="white" viewBox="0 0 448 512" height="1em" class="arrow"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg>
+                      </button>
+                </div>
+                <div class="message">
+                    <div class="success" id="success">Your Message Successfully Sent!</div>
+                    <div class="danger" id="danger">Feilds Can't be Empty!</div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Get the select element
+        var select = document.getElementById('service');
+
+        // Listen for change event on the select element
+        select.addEventListener('change', function() {
+            // Get the selected option
+            var selectedOption = this.options[this.selectedIndex];
+
+            // Get the text of the selected option
+            var selectedText = selectedOption.textContent;
+
+            // Set the value of a hidden input field to store the selected text
+            document.getElementById('selected_service').value = selectedText;
+        });
+    </script>
+    <script src="booking.js"></script>
+</body>
+</html>
